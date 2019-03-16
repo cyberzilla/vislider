@@ -14,16 +14,10 @@ $(document).ready(function(){
         }
 
         if(nextImg.is("video")){
-            var promise = nextImg[0].play();
-            if (promise !== undefined) {
-                promise.then(_ => {
-                    nextImg[0].muted = false;
-                    nextImg[0].onended = function () {
-                        $this.click();
-                    }
-                }).catch(error => {
-                    alert("Ini adalah kebijakan dari google untuk untuk interaksi user");
-                });
+            nextImg[0].play();
+            nextImg[0].muted = false;
+            nextImg[0].onended = function () {
+                $this.click();
             }
         }else{
             setTimeout(function () {
@@ -52,17 +46,7 @@ $(document).ready(function(){
         }
 
         if(prevImg.is("video")){
-            var promise = prevImg[0].play();
-            if (promise !== undefined) {
-                promise.then(_ => {
-                    prevImg[0].muted = false;
-                    prevImg[0].onended = function () {
-                        $this.click();
-                    }
-                }).catch(error => {
-                    alert("Ini adalah kebijakan dari google untuk untuk interaksi user");
-                });
-            }
+            prevImg[0].play();
             prevImg[0].muted = false;
             prevImg[0].onended = function () {
                 $this.click();

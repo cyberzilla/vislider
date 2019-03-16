@@ -14,10 +14,16 @@ $(document).ready(function(){
         }
 
         if(nextImg.is("video")){
-            nextImg[0].play();
-            nextImg[0].muted = false;
-            nextImg[0].onended = function () {
-                $this.click();
+            var promise = nextImg[0].play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    nextImg[0].muted = false;
+                    nextImg[0].onended = function () {
+                        $this.click();
+                    }
+                }).catch(error => {
+                    alert("Ini adalah kebijakan dari google untuk untuk interaksi user");
+                });
             }
         }else{
             setTimeout(function () {
@@ -46,7 +52,17 @@ $(document).ready(function(){
         }
 
         if(prevImg.is("video")){
-            prevImg[0].play();
+            var promise = prevImg[0].play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    prevImg[0].muted = false;
+                    prevImg[0].onended = function () {
+                        $this.click();
+                    }
+                }).catch(error => {
+                    alert("Ini adalah kebijakan dari google untuk untuk interaksi user");
+                });
+            }
             prevImg[0].muted = false;
             prevImg[0].onended = function () {
                 $this.click();
@@ -65,13 +81,6 @@ $(document).ready(function(){
 
     autoplay();
 });
-
-// window.onload = function() {
-//     // var context = new AudioContext();
-//     setTimeout(function () {
-//         $(".next").click();
-//     },"3000");
-// };
 
 function autoplay(){
     setTimeout(function () {

@@ -63,12 +63,13 @@ $(document).ready(function(){
 
 });
 
-window.onload = function() {
-    // var context = new AudioContext();
-    setTimeout(function () {
-        $(".next").click();
-    },"3000");
-};
+// window.onload = function() {
+//     // var context = new AudioContext();
+//     setTimeout(function () {
+//         $(".next").click();
+//     },"3000");
+// };
+
 // autoplay();
 
 function autoplay(){

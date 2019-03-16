@@ -61,6 +61,7 @@ $(document).ready(function(){
         }
     });
 
+    autoplay();
 });
 
 // window.onload = function() {
@@ -69,8 +70,6 @@ $(document).ready(function(){
 //         $(".next").click();
 //     },"3000");
 // };
-
-// autoplay();
 
 function autoplay(){
     setTimeout(function () {

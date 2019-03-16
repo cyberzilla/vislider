@@ -15,6 +15,7 @@ $(document).ready(function(){
 
         if(nextImg.is("video")){
             nextImg[0].play();
+            nextImg[0].muted = false;
             nextImg[0].onended = function () {
                 $this.click();
             }
@@ -46,6 +47,7 @@ $(document).ready(function(){
 
         if(prevImg.is("video")){
             prevImg[0].play();
+            prevImg[0].muted = false;
             prevImg[0].onended = function () {
                 $this.click();
             }
